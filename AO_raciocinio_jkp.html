@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<script>
+
+var controladorDoLoop= true
+ while(controladorDoLoop){
+ 	var escolhaJogador = parseInt(prompt("VAMOS JOGAR DE PEDRA, PAPEL, TESOURA!" + "\r\n" + " Digite o número correspondente:" + "\r\n" + "1 = PEDRA;"+ "\r\n" +  "2 = PAPEL;"+ "\r\n" + "3= TESOURA;"))
+ 	if(!(escolhaJogador<1 || escolhaJogador>3 || escolhaJogador=="")){
+ 		
+ 		var escolhaComputador= getRandomInt(1,3);
+
+		if (escolhaJogador==1 && escolhaComputador==2){
+			alert("Maquina escolheu PAPEL. A máquina venceu!");
+			jogarNovamente()
+		} else if (escolhaJogador==1 && escolhaComputador==3){
+			alert("Maquina escolheu TESOURA. Você ganhou!");
+			jogarNovamente()
+		}else if (escolhaJogador==1 && escolhaComputador==1){
+			alert("Maquina escolheu PEDRA. Empate!");
+			jogarNovamente()
+		}
+
+
+		if (escolhaJogador==2 && escolhaComputador==1){
+			alert(" Maquina escolheu PEDRA. Você ganhou!");
+			jogarNovamente()
+		} else if (escolhaJogador==2 && escolhaComputador==3){
+			alert("Maquina escolheu TESOURA. A máquina venceu!");
+			jogarNovamente()
+		}else if (escolhaJogador==2 && escolhaComputador==2) {
+			alert("Maquina escolheu PAPEL.Empate!");
+			jogarNovamente()
+		}
+
+
+		if (escolhaJogador==3 && escolhaComputador==1){
+			alert("Maquina escolheu PEDRA. A máquina venceu!");
+			jogarNovamente()
+		} else if (escolhaJogador==3 && escolhaComputador==2){
+			alert("Maquina escolheu PAPEL. Você ganhou!");
+			jogarNovamente()
+		}else if (escolhaJogador==3 && escolhaComputador==3){
+			alert("Maquina escolheu TESOURA. Empate!");
+			jogarNovamente()
+		}
+ 	}else{
+ 		alert("Opção inválida. Escolha 1,2 ou 3 para jogar.")
+ 	}
+
+
+ }
+	
+	function jogarNovamente(){
+		var novaTentativa= parseInt(prompt("Você quer jogar novamente? digite 1 p/ sim e 2 p/ não."));
+		if(!(novaTentativa<1 || novaTentativa>2 || novaTentativa=="")){
+			if(novaTentativa==2){
+			alert("obrigada por ter jogado comigo. Fim de Jogo.")
+			controladorDoLoop= false
+			}
+		}else {
+			alert("Digite 1 ou 2 .")
+		}
+	}
+	function getRandomInt(min, max) {
+    	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+</script>
